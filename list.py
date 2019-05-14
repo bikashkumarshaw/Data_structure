@@ -46,14 +46,19 @@ class List(object):
         if pos<0:
             while(tmp.next.next!=None):
                 tmp = tmp.next
+            value = tmp.next.value
             tmp.next = None
+            return value
         else:
             count = 0
             while(count<pos):
                 tmp = tmp.next
                 count = count+1
+            value = tmp.value
             tmp.value = tmp.next.value
             tmp.next = tmp.next.next
+            return value
+
 
     def __str__(self):
         lis = []
